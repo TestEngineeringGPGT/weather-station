@@ -7,8 +7,8 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --surface: rgba(10, 13, 20, 0.55);
-    --border: rgba(255,255,255,0.08);
+    --surface: rgba(10, 13, 20, 0.65);
+    --border: rgba(255,255,255,0.18);
     --accent: #00d4ff;
     --accent2: #ff6b35;
     --text: #ffffff;
@@ -50,9 +50,9 @@
   }
 
   .container {
-    max-width: 1100px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 48px 24px;
+    padding: 48px 40px;
     position: relative;
     z-index: 10;
   }
@@ -61,22 +61,22 @@
     background: var(--surface);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid var(--border);
-    border-radius: 14px;
+    border: 2px solid var(--border);
+    border-radius: 16px;
   }
 
-  .glass:hover { border-color: rgba(255,255,255,0.14); }
+  .glass:hover { border-color: rgba(255,255,255,0.28); }
 
   header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 48px;
+    margin-bottom: 40px;
   }
 
   .station-id {
     font-family: 'Syne', sans-serif;
-    font-size: 11px;
+    font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -86,21 +86,27 @@
 
   h1 {
     font-family: 'Syne', sans-serif;
-    font-size: clamp(28px, 5vw, 42px);
+    font-size: clamp(42px, 6vw, 64px);
     font-weight: 800;
     letter-spacing: -0.02em;
     line-height: 1;
+  }
+
+  .header-meta {
+    font-size: 18px;
+    color: var(--muted);
+    margin-top: 8px;
   }
 
   .header-right { text-align: right; }
 
   .status-dot {
     display: inline-block;
-    width: 7px;
-    height: 7px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background: #00ff88;
-    margin-right: 6px;
+    margin-right: 8px;
     animation: blink 2s ease-in-out infinite;
   }
 
@@ -112,7 +118,7 @@
   }
 
   .status-label {
-    font-size: 11px;
+    font-size: 16px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--muted);
@@ -120,20 +126,20 @@
 
   .last-updated {
     display: block;
-    font-size: 11px;
+    font-size: 16px;
     color: var(--muted);
-    margin-top: 6px;
+    margin-top: 8px;
   }
 
   .hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-bottom: 14px;
+    gap: 16px;
+    margin-bottom: 16px;
   }
 
   .hero-temp {
-    padding: 40px;
+    padding: 48px;
     position: relative;
     overflow: hidden;
   }
@@ -142,28 +148,28 @@
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
   }
 
   .hero-wind {
-    padding: 40px;
+    padding: 48px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
 
   .hero-label {
-    font-size: 10px;
+    font-size: 15px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--muted);
-    margin-bottom: 12px;
+    margin-bottom: 14px;
   }
 
   .hero-value {
     font-family: 'Syne', sans-serif;
-    font-size: clamp(56px, 8vw, 80px);
+    font-size: clamp(80px, 10vw, 120px);
     font-weight: 800;
     letter-spacing: -0.04em;
     line-height: 1;
@@ -177,66 +183,66 @@
     vertical-align: super;
   }
 
-  .hero-sub { font-size: 12px; color: var(--muted); margin-top: 12px; }
+  .hero-sub { font-size: 20px; color: var(--muted); margin-top: 14px; }
 
   .condition-badge {
     display: inline-block;
-    padding: 4px 12px;
+    padding: 6px 16px;
     border-radius: 20px;
-    font-size: 10px;
+    font-size: 14px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.1);
-    margin-top: 10px;
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.2);
+    margin-top: 12px;
   }
 
   .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-    margin-bottom: 12px;
+    gap: 14px;
+    margin-bottom: 14px;
   }
 
-  .card { padding: 20px 24px; }
+  .card { padding: 28px 32px; }
 
   .card-label {
-    font-size: 10px;
+    font-size: 14px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--muted);
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
 
   .card-value {
     font-family: 'Syne', sans-serif;
-    font-size: 26px;
+    font-size: 38px;
     font-weight: 700;
     letter-spacing: -0.02em;
   }
 
   .section-label {
-    font-size: 10px;
+    font-size: 14px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--muted);
     margin-bottom: 12px;
     margin-top: 20px;
-    padding-left: 2px;
+    padding-left: 4px;
   }
 
   .rain-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-    margin-bottom: 12px;
+    gap: 14px;
+    margin-bottom: 14px;
   }
 
   .rain-bar {
-    height: 2px;
-    background: rgba(255,255,255,0.08);
+    height: 3px;
+    background: rgba(255,255,255,0.12);
     border-radius: 2px;
-    margin-top: 10px;
+    margin-top: 12px;
     overflow: hidden;
   }
 
@@ -250,19 +256,19 @@
   .comfort-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    gap: 14px;
   }
 
   footer {
     margin-top: 40px;
     padding-top: 20px;
-    border-top: 1px solid var(--border);
+    border-top: 2px solid var(--border);
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  footer span { font-size: 11px; color: var(--muted); }
+  footer span { font-size: 15px; color: var(--muted); }
 
   .loading-overlay {
     position: fixed;
@@ -278,8 +284,8 @@
   .loading-overlay.hidden { opacity: 0; pointer-events: none; }
 
   .loader {
-    width: 32px; height: 32px;
-    border: 2px solid rgba(255,255,255,0.1);
+    width: 40px; height: 40px;
+    border: 3px solid rgba(255,255,255,0.1);
     border-top-color: var(--accent);
     border-radius: 50%;
     animation: spin 0.8s linear infinite;
@@ -321,7 +327,7 @@
     <div>
       <div class="station-id">Davis Vantage Pro 2</div>
       <h1>Weather Station</h1>
-      <div style="font-size:12px;color:var(--muted);margin-top:6px;">GPG*T VDA — San Angelo, TX</div>
+      <div class="header-meta">GPG*T VDA — San Angelo, TX</div>
     </div>
     <div class="header-right">
       <div>
@@ -342,11 +348,11 @@
     <div class="hero-wind glass">
       <div>
         <div class="hero-label">Wind</div>
-        <div class="hero-value" style="font-size:clamp(30px,4vw,46px);" id="wind">—</div>
+        <div class="hero-value" style="font-size:clamp(48px,6vw,80px);" id="wind">—</div>
       </div>
-      <div style="margin-top:20px;">
+      <div style="margin-top:24px;">
         <div class="hero-label">10-Min Gust</div>
-        <div style="font-family:'Syne',sans-serif;font-size:28px;font-weight:700;color:var(--accent2);" id="windGust">—</div>
+        <div style="font-family:'Syne',sans-serif;font-size:44px;font-weight:700;color:var(--accent2);" id="windGust">—</div>
       </div>
     </div>
   </div>
@@ -355,7 +361,7 @@
     <div class="card glass"><div class="card-label">Humidity</div><div class="card-value blue" id="humidity">—</div></div>
     <div class="card glass"><div class="card-label">Dewpoint</div><div class="card-value" id="dewpoint">—</div></div>
     <div class="card glass"><div class="card-label">Barometer</div><div class="card-value" id="barometer">—</div></div>
-    <div class="card glass"><div class="card-label">Station Time</div><div class="card-value" style="font-size:18px;" id="stationTime">—</div></div>
+    <div class="card glass"><div class="card-label">Station Time</div><div class="card-value" style="font-size:28px;" id="stationTime">—</div></div>
   </div>
 
   <div class="section-label">Precipitation</div>
@@ -383,7 +389,6 @@
 const SUPABASE_URL = "https://zrieseuynwnpsfvplwfi.supabase.co";
 const SUPABASE_KEY = "sb_publishable_-OFTC5LLjm7JGOqDUohLGg_pSDwuTeO";
 
-// ── Rain canvas ──────────────────────────────────────────────────────────────
 const canvas = document.getElementById("rainCanvas");
 const ctx = canvas.getContext("2d");
 let drops = [], rainActive = false, animFrame;
@@ -429,7 +434,6 @@ function stopRain() {
 
 window.addEventListener("resize", resizeCanvas);
 
-// ── Sky background ───────────────────────────────────────────────────────────
 function parseHour(stationTimeStr) {
   if (!stationTimeStr) return new Date().getHours();
   const m = stationTimeStr.match(/(\d+):(\d+)([ap])/);
@@ -441,12 +445,12 @@ function parseHour(stationTimeStr) {
 }
 
 function getSkyColors(hour) {
-  if (hour >= 5  && hour < 7)  return ["#0d0520","#3d1a6e","#c45c3c","#f5a623"]; // sunrise
-  if (hour >= 7  && hour < 11) return ["#0d1b3e","#1a3a6e","#2e6fa8","#87ceeb"]; // morning
-  if (hour >= 11 && hour < 15) return ["#0a1628","#1a3a6e","#2980b9","#5dade2"]; // midday
-  if (hour >= 15 && hour < 18) return ["#0d1b3e","#1a3a6e","#2471a3","#7fb3d3"]; // afternoon
-  if (hour >= 18 && hour < 20) return ["#1a0a2e","#6e2a1a","#c0392b","#e67e22"]; // sunset
-  return ["#030510","#07091a","#0d0f2a","#111428"]; // night
+  if (hour >= 5  && hour < 7)  return ["#0d0520","#3d1a6e","#c45c3c","#f5a623"];
+  if (hour >= 7  && hour < 11) return ["#0d1b3e","#1a3a6e","#2e6fa8","#87ceeb"];
+  if (hour >= 11 && hour < 15) return ["#0a1628","#1a3a6e","#2980b9","#5dade2"];
+  if (hour >= 15 && hour < 18) return ["#0d1b3e","#1a3a6e","#2471a3","#7fb3d3"];
+  if (hour >= 18 && hour < 20) return ["#1a0a2e","#6e2a1a","#c0392b","#e67e22"];
+  return ["#030510","#07091a","#0d0f2a","#111428"];
 }
 
 function getTempTint(tempF, rainRate) {
@@ -515,7 +519,6 @@ function getCondition(t, rainRate, hum) {
   return "Freezing";
 }
 
-// ── Helpers ──────────────────────────────────────────────────────────────────
 function set(id, val) { const e = document.getElementById(id); if (e) e.textContent = val || "—"; }
 
 function bar(id, val, max) {
@@ -523,7 +526,6 @@ function bar(id, val, max) {
   if (e) e.style.width = Math.min(((parseFloat(val)||0)/max)*100, 100) + "%";
 }
 
-// ── Fetch ────────────────────────────────────────────────────────────────────
 async function fetchWeather() {
   try {
     const res = await fetch(`${SUPABASE_URL}/rest/v1/weather_current?id=eq.1&select=*`, {
@@ -558,14 +560,14 @@ async function fetchWeather() {
     set("conditionBadge", getCondition(tempF, rainRate, humidity));
     set("wind", d.wind || "—");
     set("windGust", d.wind_gust || "—");
-    set("humidity",   d.humidity   || "—");
-    set("dewpoint",   d.dewpoint   || "—");
-    set("barometer",  d.barometer  || "—");
-    set("stationTime",d.station_time || "—");
-    set("rainToday",  d.rain_today  || "—");
-    set("rainRate",   d.rain_rate   || "—");
-    set("rainMonthly",d.rain_monthly|| "—");
-    set("rainYearly", d.rain_yearly || "—");
+    set("humidity",    d.humidity    || "—");
+    set("dewpoint",    d.dewpoint    || "—");
+    set("barometer",   d.barometer   || "—");
+    set("stationTime", d.station_time || "—");
+    set("rainToday",   d.rain_today   || "—");
+    set("rainRate",    d.rain_rate    || "—");
+    set("rainMonthly", d.rain_monthly || "—");
+    set("rainYearly",  d.rain_yearly  || "—");
     bar("rainTodayBar",   d.rain_today,   2);
     bar("rainMonthlyBar", d.rain_monthly, 5);
     bar("rainYearlyBar",  d.rain_yearly,  20);
